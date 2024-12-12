@@ -20,7 +20,7 @@ export const labReviewQuestions = [
             "LocalDB",
             "SQL Server Express"
           ],
-          correctAnswer: "SQL Server 2017"
+          correctAnswer: "LocalDB"
         },
         {
           question: "According to Wikipedia, what kind of \"system\" is a client/server application?",

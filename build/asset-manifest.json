@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/INFO-3070-Final-Study-Guide/static/css/main.c9444df6.css",
-    "main.js": "/INFO-3070-Final-Study-Guide/static/js/main.71b6d691.js",
+    "main.css": "/INFO-3070-Final-Study-Guide/static/css/main.3670b723.css",
+    "main.js": "/INFO-3070-Final-Study-Guide/static/js/main.2f6bfe6f.js",
     "index.html": "/INFO-3070-Final-Study-Guide/index.html",
-    "main.c9444df6.css.map": "/INFO-3070-Final-Study-Guide/static/css/main.c9444df6.css.map",
-    "main.71b6d691.js.map": "/INFO-3070-Final-Study-Guide/static/js/main.71b6d691.js.map"
+    "main.3670b723.css.map": "/INFO-3070-Final-Study-Guide/static/css/main.3670b723.css.map",
+    "main.2f6bfe6f.js.map": "/INFO-3070-Final-Study-Guide/static/js/main.2f6bfe6f.js.map"
   },
   "entrypoints": [
-    "static/css/main.c9444df6.css",
-    "static/js/main.71b6d691.js"
+    "static/css/main.3670b723.css",
+    "static/js/main.2f6bfe6f.js"
   ]
 }

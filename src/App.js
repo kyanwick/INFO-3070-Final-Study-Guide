@@ -1,6 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { labReviewQuestions } from './quizData';
 import { ChevronRight, RefreshCcw, Check, X } from 'lucide-react';
+
+function shuffleArray(array) {
+  const shuffledArray = [...array];
+  for (let i = shuffledArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+  }
+  return shuffledArray;
+}
 
 function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -9,16 +18,22 @@ function App() {
   const [showResult, setShowResult] = useState(false);
   const [selectedLab, setSelectedLab] = useState(null);
   const [incorrectQuestions, setIncorrectQuestions] = useState([]);
+  const [shuffledQuestions, setShuffledQuestions] = useState([]);
 
   // Extract unique lab sources
   const availableLabs = labReviewQuestions.map(section => section.source);
 
   const handleLabSelection = (lab) => {
     setSelectedLab(lab);
-    // Find the selected lab's questions
+    // Find the selected lab's questions and shuffle their options
     const labQuestions = labReviewQuestions.find(section => section.source === lab);
+    const questionsWithShuffledOptions = labQuestions.questions.map(question => ({
+      ...question,
+      shuffledOptions: shuffleArray(question.options)
+    }));
     
-    // Reset quiz state
+    // Reset quiz 
+    setShuffledQuestions(questionsWithShuffledOptions);
     setCurrentQuestion(0);
     setSelectedAnswer(null);
     setScore(0);
@@ -26,9 +41,7 @@ function App() {
     setIncorrectQuestions([]);
   };
 
-  const currentLabQuestions = selectedLab 
-    ? labReviewQuestions.find(section => section.source === selectedLab).questions 
-    : [];
+  const currentLabQuestions = shuffledQuestions;
 
   const handleAnswerSelect = (answer) => {
     setSelectedAnswer(answer);
@@ -37,7 +50,7 @@ function App() {
   const handleNextQuestion = () => {
     const currentQuizQuestion = currentLabQuestions[currentQuestion];
 
-    // Check if answer is correct
+    // Check if answer is correct 
     if (selectedAnswer === currentQuizQuestion.correctAnswer) {
       setScore(score + 1);
     } else {
@@ -69,6 +82,7 @@ function App() {
     setScore(0);
     setShowResult(false);
     setIncorrectQuestions([]);
+    setShuffledQuestions([]);
   };
 
   // Lab Selection Screen
@@ -137,6 +151,12 @@ function App() {
             </button>
             <button 
               onClick={() => {
+                const labQuestions = labReviewQuestions.find(section => section.source === selectedLab);
+                const questionsWithShuffledOptions = labQuestions.questions.map(question => ({
+                  ...question,
+                  shuffledOptions: shuffleArray(question.options)
+                }));
+                setShuffledQuestions(questionsWithShuffledOptions);
                 setShowResult(false);
                 setCurrentQuestion(0);
                 setSelectedAnswer(null);
@@ -163,7 +183,7 @@ function App() {
         <p className="text-lg mb-4">{currentLabQuestions[currentQuestion].question}</p>
         
         <div className="space-y-3">
-          {currentLabQuestions[currentQuestion].options.map((option, index) => (
+          {currentLabQuestions[currentQuestion].shuffledOptions.map((option, index) => (
             <button
               key={index}
               onClick={() => handleAnswerSelect(option)}
@@ -201,4 +221,5 @@ function App() {
     </div>
   );
 }
+
 export default App;
