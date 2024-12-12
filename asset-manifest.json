@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/INFO-3070-Final-Study-Guide/static/css/main.c9444df6.css",
+    "main.js": "/INFO-3070-Final-Study-Guide/static/js/main.71b6d691.js",
+    "index.html": "/INFO-3070-Final-Study-Guide/index.html",
+    "main.c9444df6.css.map": "/INFO-3070-Final-Study-Guide/static/css/main.c9444df6.css.map",
+    "main.71b6d691.js.map": "/INFO-3070-Final-Study-Guide/static/js/main.71b6d691.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c9444df6.css",
+    "static/js/main.71b6d691.js"
+  ]
+}
