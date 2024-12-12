@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/INFO-3070-Final-Study-Guide/static/css/main.3670b723.css",
-    "main.js": "/INFO-3070-Final-Study-Guide/static/js/main.2f6bfe6f.js",
+    "main.js": "/INFO-3070-Final-Study-Guide/static/js/main.a2301e5c.js",
     "index.html": "/INFO-3070-Final-Study-Guide/index.html",
     "main.3670b723.css.map": "/INFO-3070-Final-Study-Guide/static/css/main.3670b723.css.map",
-    "main.2f6bfe6f.js.map": "/INFO-3070-Final-Study-Guide/static/js/main.2f6bfe6f.js.map"
+    "main.a2301e5c.js.map": "/INFO-3070-Final-Study-Guide/static/js/main.a2301e5c.js.map"
   },
   "entrypoints": [
     "static/css/main.3670b723.css",
-    "static/js/main.2f6bfe6f.js"
+    "static/js/main.a2301e5c.js"
   ]
 }
